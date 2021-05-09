@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Brand Digital Portal | The Food Fest</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  /* For Firefox */
+  input[type='number'] {
+      -moz-appearance:textfield;
+  }
+  /* Webkit browsers like Safari and Chrome */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+</style>
+<script src="assets/webfont.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script type="27d95d96077262733048a84b-text/javascript">
+  WebFont.load({
+    google: {"families":["Montserrat:400,500,600,700","Noto+Sans:400,700"]},
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+  });
+</script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+
+<link rel="stylesheet" href="assets/vendors/css/base/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendors/css/base/elisyam-1.5.min.css">
+<link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl-carousel/owl.theme.min.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body id="page-top">
+
+<div id="preloader">
+<div class="canvas">
+<img src="assets/img/logo.png" alt="logo" class="loader-logo">
+<div class="spinner"></div>
+</div>
+</div>
+<div class="page">
+
+<div class="page-content d-flex align-items-stretch">
+
+<div class="container-fluid">
+<div class="row flex-row">
+<div class="col-xl-3">
+
+<div class="widget has-shadow">
+<div class="widget-body">
+
+<div class="mt-5">
+  <img src="assets/img/logo.png" alt="..." style="width: 120px;" class="avatar rounded-circle d-block mx-auto">
+</div>
+<h3 class="text-center mt-3 mb-1 merchantName"></h3>
+<p class="text-center merchantId"></p>
+<div class="em-separator separator-dashed"></div>
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="addDish.html"><i class="la la-cutlery la-2x align-middle pr-2"></i>Add Dish</a>
+  </li><br>
+  <!-- <li class="nav-item">
+      <a class="nav-link" href="dishPhotos.html"><i class="la la-cloud-upload la-2x align-middle pr-2"></i>Upload Dish Photos</a>
+    </li><br> -->
+  <li class="nav-item">
+    <a class="nav-link" href="dashboard.html"><i class="la la-arrow-circle-left la-2x align-middle pr-2"></i>Back to Dashboard</a>
+  </li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div class="col-xl-9">
+<div class="widget has-shadow">
+
+<div class="widget-header bordered no-actions d-flex align-items-center">
+  <h4>Add New Dish to AFF Menu</h4>
+</div>
+<div class="widget-body">
+
+<div class="col-10 ml-auto">
+<div class="section-title mt-3 mb-3">
+  <h4>Dish Details</h4>
+</div>
+</div>
+<br>
+<form class="form-horizontal" id="addDishForm">
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Dish Type<span style="color: red">*</span></label>
+    <div class="col-lg-6">
+      <select id="dishType" class="custom-select form-control" required>
+          <option value="">Select Dish Type</option>
+          <option value="Veg">Veg</option>
+          <option value="Egg">Egg</option>
+          <option value="Non-Veg">Non-Veg</option>
+        </select>
+    </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Dish Name<span style="color: red">*</span></label>
+    <div class="col-lg-6">
+      <input type="text" id="dishName" value="" class="form-control" placeholder="Enter your dish name" required>
+    </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Dish Price<span style="color: red">*</span></label>
+    <div class="col-lg-6">
+      <input type="number" id="dishPrice" value="" class="form-control" placeholder="Enter your dish price" required>
+    </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Offer Price</label>
+    <div class="col-lg-6">
+      <input type="number" id="dishOfferPrice" value="" class="form-control" placeholder="Enter your dish offer price">
+    </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Description<span style="color: red">*</span></label>
+    <div class="col-lg-6">
+      <textarea id="dishDescription" class="form-control" placeholder="Enter your dish description here.." required></textarea>
+    </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+      <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Dish Available<span style="color: red">*</span></label>
+      <div class="col-lg-6">
+        <select id="isActive" class="custom-select form-control" required>
+          <option value="">Select Dish is Available or Not</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+    </div>
+
+<div class="em-separator separator-dashed"></div>
+<div class="text-center">
+  <button class="btn btn-gradient-01" type="submit">Next</button>
+  <button class="btn btn-shadow" type="reset">Reset</button>
+</div>
+</form>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<footer class="main-footer">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+      <p class="text-gradient-02">Design & Developed By</p> &nbsp;&nbsp;<a style="font-size: 90%;color:crimson" href="https://github.com/sahilachhava" target="_blank">Sahil Achhava</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+</div>
+
+
+<script src="assets/vendors/js/base/jquery.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/base/core.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/nicescroll/nicescroll.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/owl-carousel/owl.carousel.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/app/app.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/js/app/contact/contact.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/rocket-loader.min.js" data-cf-settings="27d95d96077262733048a84b-|49" defer=""></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script src="firebase.js"></script>
+</body>
+<script type="text/javascript">
+  var session = sessionStorage.getItem("brandEmail");
+  if(session == null || session == "") {
+    window.location.href = "index.html";
+  }else{
+    document.getElementsByClassName("merchantName")[0].innerHTML = sessionStorage.getItem("brandName");
+    document.getElementsByClassName("merchantId")[0].innerHTML = sessionStorage.getItem("brandEmail");
+  }
+</script>
+
+<script>
+  if(sessionStorage.getItem("dishId")){
+    document.getElementById("dishName").value = sessionStorage.getItem("dishName");
+    document.getElementById("dishType").value = sessionStorage.getItem("dishType");
+    document.getElementById("dishPrice").value = sessionStorage.getItem("dishPrice");
+    document.getElementById("dishOfferPrice").value = sessionStorage.getItem("dishOfferPrice");
+    document.getElementById("dishDescription").value = sessionStorage.getItem("dishDescription");
+    document.getElementById("isActive").value = sessionStorage.getItem("isActive");
+  }
+</script>
+
+<script>
+  const form = document.querySelector('#addDishForm');
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    var session = sessionStorage.getItem("brandEmail");
+
+    var dishType = document.getElementById("dishType").value;
+    var dishName = document.getElementById("dishName").value;
+    var dishPrice = document.getElementById("dishPrice").value;
+    var dishOfferPrice = document.getElementById("dishOfferPrice").value;
+    var dishDescription = document.getElementById("dishDescription").value;
+    var isActive = document.getElementById("isActive").value;
+    var idRef = session+"_"+dishName;
+    var dishId = idRef.replace(" ", "_");
+
+    sessionStorage.setItem("dishId", dishId);
+    sessionStorage.setItem("dishType", dishType);
+    sessionStorage.setItem("dishName", dishName);
+    sessionStorage.setItem("dishPrice", dishPrice);
+    sessionStorage.setItem("dishOfferPrice", dishOfferPrice);
+    sessionStorage.setItem("dishDescription", dishDescription);
+    sessionStorage.setItem("isActive", isActive);
+
+    window.location.href = "dishPhotos.html";
+  });
+</script>
+</html>

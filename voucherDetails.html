@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Voucher Details | The Food Fest</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  /* For Firefox */
+  input[type='number'] {
+      -moz-appearance:textfield;
+  }
+  /* Webkit browsers like Safari and Chrome */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  }
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #ff0000;
+  border-color: #00ff00 transparent #ff0000 transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+tr {
+  text-align: center;
+}
+</style>
+<script src="assets/webfont.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script type="3045021b30ea9e5a04cf05b1-text/javascript">
+  WebFont.load({
+    google: {"families":["Montserrat:400,500,600,700","Noto+Sans:400,700"]},
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+  });
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+
+<link rel="stylesheet" href="assets/vendors/css/base/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendors/css/base/elisyam-1.5.min.css">
+<link rel="stylesheet" href="assets/css/datatables/datatables.min.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body id="page-top">
+
+<div id="preloader">
+<div class="canvas">
+<img src="assets/img/logo.png" alt="logo" class="loader-logo">
+<div class="spinner"></div>
+</div>
+</div>
+
+<div class="page">
+<div class="page-content d-flex align-items-stretch">
+<div class="content-inner compact">
+<div class="container-fluid">
+
+<div class="row">
+<div class="page-header">
+<div class="d-flex align-items-center">
+  <h2 class="page-header-title"><a href="eTickets.html">AFF Vouchers</a></h2>
+<div>
+<div class="page-header-tools">
+  <a class="btn btn-gradient-01" href="dashboard.html">Back to Dashboard</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xl-12">
+<!-- Page Starts -->
+
+<div class="widget has-shadow">
+<div class="widget-header bordered no-actions d-flex align-items-center">
+  <h4>AFF Vouchers</h4>
+</div>
+<div class="widget-body">
+  <ul class="nav nav-tabs nav-fill" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="just-tab-1" data-toggle="tab" href="#j-tab-1" role="tab" aria-controls="j-tab-1" aria-selected="true"></a>
+  </li>
+  <!-- <li class="nav-item">
+    <a class="nav-link disabled">Shared</a>
+  </li> -->
+  </ul>
+  <div class="tab-content pt-3">
+    <div class="tab-pane fade show active" id="j-tab-1" role="tabpanel" aria-labelledby="just-tab-1">
+      <div class="widget has-shadow">
+        <div class="widget-body">
+        <div class="table-responsive">
+        <table class="table table-bordered mb-0">
+        <thead>
+        <tr>
+        <th>Pack No</th>
+        <th>Total Vouchers</th>
+        <th>Remaining Vouhcers</th>
+        <th>Claimed Vouchers</th>
+        <th>Vouhcer Status</th>
+        <th>Redeem Vouhcer</th>
+        </tr>
+        </thead>
+        <tbody id="vouchers">
+            <tr><td style="align-content: center;" colspan="5">No Vouchers Found</td></tr>
+        </tbody>
+        </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Page Ends -->
+</div>
+</div>
+
+<footer class="main-footer">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+      <p class="text-gradient-02">Design & Developed By</p> &nbsp;&nbsp;<a style="font-size: 90%;color:crimson" href="https://github.com/sahilachhava" target="_blank">Sahil Achhava</a>
+    </div>
+  </div>
+</footer>
+
+<div id="redeemModal"></div>
+
+<!-- success modal -->
+<div id="success-modal" class="modal fade">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-body text-center">
+<div class="sa-icon sa-success animate" style="display: block;">
+<span class="sa-line sa-tip animateSuccessTip"></span>
+<span class="sa-line sa-long animateSuccessLong"></span>
+<div class="sa-placeholder"></div>
+<div class="sa-fix"></div>
+</div>
+<div class="section-title mt-5 mb-2">
+<h2 class="text-gradient-02">Voucher Redeemed!</h2>
+</div>
+<p class="mb-5">The voucher redeemed successfully</p>
+<button type="button" class="btn btn-shadow mb-3" data-dismiss="modal">Ok</button>
+</div>
+</div>
+</div>
+</div>
+
+<a href="#" class="go-top"><i class="la la-arrow-up"></i></a>
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/vendors/js/base/core.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/datatables/datatables.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/datatables/dataTables.buttons.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/datatables/jszip.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/datatables/buttons.html5.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/datatables/pdfmake.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/datatables/vfs_fonts.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/datatables/buttons.print.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/nicescroll/nicescroll.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/vendors/js/app/app.min.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/js/components/tables/tables.js" type="3045021b30ea9e5a04cf05b1-text/javascript"></script>
+<script src="assets/rocket-loader.min.js" data-cf-settings="3045021b30ea9e5a04cf05b1-|49" defer=""></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+<script src="firebase.js"></script>
+<script>
+  var session = sessionStorage.getItem("brandEmail");
+  if(session == null || session == "") {
+    window.location.href = "index.html";
+  }
+</script>
+<script>
+    var session = sessionStorage.getItem("brandEmail");
+    var userEmail = sessionStorage.getItem("userEmail");
+    $('#vouchers').empty();
+    db.collection('users').doc(userEmail).collection('eTickets')
+    .get().then((documentSnapshot)=>{
+      documentSnapshot.forEach((ticketSnapshot)=>{
+        const ticketData = ticketSnapshot.data();
+        ticketSnapshot.ref.collection("vouchers").doc(session).get().then((doc)=>{
+          const voucherData = doc.data();
+          if(voucherData.isRedeemed == false){
+            if(voucherData.voucherClaimed == 0){
+              $('#vouchers').append('<tr>'+
+              '<td>'+ticketData.ticketCode+'</td>'+
+              '<td><b><span class="text-primary">'+voucherData.totalVouchers+'</span></b></td>'+
+              '<td>'+voucherData.voucherRemaining+'</td>'+
+              '<td>'+voucherData.voucherClaimed+'</td>'+
+                '<td style="color: red;" class="td-actions">Not Redeemed</td>'+
+                '<td class="td-actions">'+
+                  '<center><a href="#" onclick="redeemNow(\''+ticketData.ticketCode+'\');">Redeem Now</a></center>'+
+                '</td>'+
+              '</tr>');
+            }else{
+              $('#vouchers').append('<tr>'+
+              '<td>'+ticketData.ticketCode+'</td>'+
+              '<td><b><span class="text-primary">'+voucherData.totalVouchers+'</span></b></td>'+
+              '<td>'+voucherData.voucherRemaining+'</td>'+
+              '<td>'+voucherData.voucherClaimed+'</td>'+
+              '<td style="color: green;" class="td-actions">Partially Redeemed</td>'+
+              '<td class="td-actions">'+
+                  '<center><a href="#" onclick="redeemNow(\''+ticketData.ticketCode+'\');">Redeem Now</a></center>'+
+                '</td>'+
+              '</tr>');
+            }
+          }else{
+            $('#vouchers').append('<tr>'+
+            '<td>'+ticketData.ticketCode+'</td>'+
+            '<td><b><span class="text-primary">'+voucherData.totalVouchers+'</span></b></td>'+
+            '<td>'+voucherData.voucherRemaining+'</td>'+
+            '<td>'+voucherData.voucherClaimed+'</td>'+
+            '<td style="color: green;" class="td-actions">Redeemed</td>'+
+            '<td class="td-actions">'+
+                '<center><a href="#"><i class="ion ion-checkmark-circled"></i></a></center>'+
+              '</td>'+
+            '</tr>');
+          }
+        })
+      })
+    })
+    // if(snapshot.size==0){
+    //   alert("No Tickets Issued or Found");
+    //   window.location.href = "dashboard.html";
+    // }
+</script>
+<script>
+  async function redeemNow(code){
+    jQuery.noConflict();
+    $('#redeemModal').empty();
+    $('#redeemModal').append(
+      '<div id="modalRedeem" class="modal fade">'+
+        '<div class="modal-dialog modal-dialog-centered">'+
+        '<div class="modal-content">'+
+          '<div class="modal-header">'+
+            '<h4 class="modal-title">Redeem this Voucher</h4>'+
+            '<button type="button" class="close" data-dismiss="modal">'+
+              '<span aria-hidden="true">×</span>'+
+              '<span class="sr-only">close</span>'+
+            '</button>'+
+          '</div>'+
+          '<div class="modal-body">'+
+            '<center>'+
+              '<h3>Pack ID: '+code+'</h3><br>'+
+              '<h5>Redeem 1 Voucher</h5>'+
+             '</center><br>'+
+            '<form id="modelForm">'+
+            '<input type="hidden" id="packNo" value="'+code+'" />'+
+          '</div>'+
+          '<div class="modal-footer">'+
+            '<input type="button" class="btn btn-shadow" id="closeModal" data-dismiss="modal" value="Close" />'+
+            '<input type="submit" onclick="redeemVoucher();" data-toggle="modal" data-target="#success-modal" class="btn btn-danger" value="Confirm Redeem" />'+
+          '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>'+
+      '</div>'
+    );
+    $('#modalRedeem').modal('show');
+  }
+
+</script>
+<script>
+  function redeemVoucher(){
+    var session = sessionStorage.getItem("brandEmail");
+    var userEmail = sessionStorage.getItem('userEmail');
+    var code = document.getElementById('packNo').value;
+    $('#closeModal').click();
+    db.collection("users").doc(userEmail).collection('eTickets')
+    .doc(code).collection('vouchers').doc(session).get().then(async (doc)=>{
+      if(doc.exists){
+        const voucherData = doc.data();
+        if(voucherData.voucherRemaining == 1){
+           await doc.ref.update({
+            voucherRemaining: parseInt(voucherData.voucherRemaining - 1),
+            voucherClaimed: parseInt(voucherData.voucherClaimed + 1),
+            isRedeemed: true,
+          })
+        }else{
+           await doc.ref.update({
+            voucherRemaining: parseInt(voucherData.voucherRemaining - 1),
+            voucherClaimed: parseInt(voucherData.voucherClaimed + 1),
+          })
+        }
+      }else{
+        alert("Vouhcer Not Found or Already Redeemed");
+      }
+    }).then(()=>{
+      location.reload(true);
+    });
+  }
+</script>
+</body>
+</html>

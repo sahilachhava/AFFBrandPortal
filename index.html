@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Brand Digital Portal | The Food Fest</title>
+
+<style>
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+</style>
+
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="stylesheet" href="assets/vendors/css/base/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendors/css/base/elisyam-1.5.min.css">
+<script src="assets/webfont.js" type="315fd9c2c53cd42e263be087-text/javascript"></script>
+<script type="315fd9c2c53cd42e263be087-text/javascript">
+  WebFont.load({
+    google: {"families":["Montserrat:400,500,600,700","Noto+Sans:400,700"]},
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+  });
+</script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+<body class="bg-white">
+<div id="preloader">
+<div class="canvas">
+<img src="assets/img/logo.png" alt="logo" class="loader-logo">
+<div class="spinner"></div>
+</div>
+</div>
+<div class="container-fluid no-padding h-100">
+<div class="row flex-row h-100 bg-white">
+<div class="col-xl-8 col-lg-6 col-md-5 no-padding">
+<div class="elisyam-bg background-01">
+<div class="elisyam-overlay overlay-01"></div>
+<div class="authentication-col-content mx-auto">
+<center>
+<h1 class="gradient-text-01">
+Welcome To AFF Brand Portal!
+</h1>
+<span class="description">
+A Step towards Digitalization  
+</span></center>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-lg-6 col-md-7 my-auto no-padding">
+<div class="authentication-form mx-auto">
+<center>
+<a href="index.html">
+<img src="assets/img/logo.png" height="180px" width="270px" alt="logo">
+</a>
+</center>
+<br><br><br>
+<h3>Sign In To AFF Brand Account</h3>
+<form id="loginForm">
+<div class="group material-input">
+<input type="email" id="email" required>
+<span class="highlight"></span>
+<span class="bar"></span>
+<label>Brand Email</label>
+</div>
+<div class="group material-input">
+<input type="password" id="pass" minlength="8" required>
+<span class="highlight"></span>
+<span class="bar"></span>
+<label>Password</label>
+</div>
+<div class="row">
+<div class="col text-left">
+<div class="styled-checkbox">
+</div>
+</div>
+<div class="col text-right">
+<a href="forgotPassword.html">Forgot Password ?</a>
+</div>
+</div>
+<div class="sign-btn text-center">
+<input type="submit" value="Sign In" class="btn btn-lg btn-gradient-01" />
+</form>
+</div>
+<div class="register">
+Don't have an account?
+<br>
+<a href="register.html">Create an account</a>
+</div>
+<div class="register">
+Go to Outlet Portal ?
+<br>
+<a href="https://outlet.thefoodfest.in/" target="_blank">Outlet Portal</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+<script src="assets/vendors/js/base/jquery.min.js" type="d7d3bba75a892651b7e7be59-text/javascript"></script>
+<script src="assets/vendors/js/base/core.min.js" type="d7d3bba75a892651b7e7be59-text/javascript"></script>
+<script src="assets/vendors/js/app/app.min.js" type="d7d3bba75a892651b7e7be59-text/javascript"></script>
+<script src="assets/rocket-loader.min.js" data-cf-settings="315fd9c2c53cd42e263be087-|49" defer=""></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+<script src="firebase.js"></script>
+<script>
+  const form = document.querySelector('#loginForm');
+  const auth = firebase.auth();
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('pass').value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function (response) {
+      if(response.user.emailVerified == true){
+        sessionStorage.setItem("brandName", response.user.displayName);
+        sessionStorage.setItem("brandEmail", response.user.email);
+        db.collection("brands").doc(email).get().then((doc) => {
+          if(doc.exists){
+            window.location.href = "dashboard.html";
+          }else{
+            window.location.href = "enterBrandDetails.html";
+          }
+        })
+      }else{
+        db.collection("brands").doc(response.user.email).get().then((doc) => {
+          if(doc.exists){
+            var brandData = doc.data();
+            if(brandData.userType == "brand"){
+              alert("Brand email not verified, please click link you will get in email");
+              auth.currentUser.sendEmailVerification().then(function(){
+                alert("Email verification sent again, please verify your email");
+                window.location.href = "mailConfirmation.html";
+              })
+            }else{
+              alert("This is brand portal, your account type is not brand");
+            }
+          }else{
+            alert("Your account type is not brand or you didn't verified your email account");
+            auth.currentUser.sendEmailVerification().then(function(){
+              alert("Email verification sent again, please verify your email");
+              window.location.href = "mailConfirmation.html";
+            })
+          }
+        })
+      }
+    })
+    .catch(function (error) {
+      if(error.code == "auth/wrong-password"){
+        alert("Invalid username or password");
+      }else if(error.code == "auth/user-not-found"){
+        alert("Brand not found, please register your brand");
+      }
+    });
+  });
+</script>
+
+</html>

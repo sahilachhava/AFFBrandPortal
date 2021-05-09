@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Brand Digital Portal | The Food Fest</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  /* For Firefox */
+  input[type='number'] {
+      -moz-appearance:textfield;
+  }
+  /* Webkit browsers like Safari and Chrome */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    border: 32px solid #00ff00;
+    border-color: #ff0000 transparent #00ff00 transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+  @keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+  }
+</style>
+<script src="assets/webfont.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script type="34f65747dffe1dfea30e28ef-text/javascript">
+  WebFont.load({
+    google: {"families":["Montserrat:400,500,600,700","Noto+Sans:400,700"]},
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+  });
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+
+<link rel="stylesheet" href="assets/vendors/css/base/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendors/css/base/elisyam-1.5.min.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body id="page-top">
+
+<div id="preloader">
+<div class="canvas">
+<img src="assets/img/logo.png" alt="logo" class="loader-logo">
+<div class="spinner"></div>
+</div>
+</div>
+
+<div class="page">
+<div class="page-content d-flex align-items-stretch">
+
+<div class="content-inner compact">
+<div class="container-fluid">
+
+<div class="row">
+<div class="page-header">
+<div class="d-flex align-items-center">
+<h2 class="page-header-title"><a href="dashboard.html">AFF Brand Dashboard</a></h2>
+<div>
+<div class="page-header-tools">
+<a class="btn btn-gradient-01" href="dashboard.html">Back to Dashboard</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row flex-row">
+
+<div class="col-xl-12" id="dishDiv">
+<!-- new dish card -->
+<center><div class="lds-hourglass" id="load"></div></center>
+<!-- end dish card -->
+</div>
+
+</div>
+
+<br><br><br><br><br>
+
+<footer class="main-footer">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+      <p class="text-gradient-02">Design & Developed By</p> &nbsp;&nbsp;<a style="font-size: 90%;color:crimson" href="https://github.com/sahilachhava" target="_blank">Sahil Achhava</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="assets/vendors/js/base/jquery.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/base/core.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/nicescroll/nicescroll.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/chart/chart.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/progress/circle-progress.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/app/app.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/js/dashboard/db-compact.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/js/app/contact/contact.min.js" type="cf1ff22fdfb148a3491a8bee-text/javascript"></script>
+<script src="assets/rocket-loader.min.js" data-cf-settings="34f65747dffe1dfea30e28ef-|49" defer=""></script>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+<script src="firebase.js"></script>
+<script type="text/javascript">
+  var session = sessionStorage.getItem("brandEmail");
+  if(session == null || session == "") {
+    window.location.href = "index.html";
+  }
+</script>
+<script>
+  var session = sessionStorage.getItem("brandEmail");
+  var mainDiv = document.getElementById("dishDiv");
+  db.collection("brands").doc(session).collection("dishDetails").get().then((querySnapshot) => {
+    if(querySnapshot.size != 0){
+      querySnapshot.forEach((doc) => {
+        var dishData = doc.data();
+        if(dishData.isActive){
+          mainDiv.insertAdjacentHTML('beforebegin', 
+          '<div class="col-xl-3 col-md-4 col-sm-6 col-remove">' + 
+          '<div class="widget-image has-shadow">' +
+          '<div class="quick-actions hover dark">'+
+          '<div class="dropdown">'+
+          '<button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">'+
+          '<i class="la la-ellipsis-h"></i>'+
+          '</button>'+
+          '<div class="dropdown-menu">'+
+          '<a href="dishActive.html?id='+doc.id+'&active='+dishData.isActive+'" class="dropdown-item remove">'+
+          '<i class="la la-pause"></i>Pause selling'+
+          '</a>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '<div class="contact-card">'+
+          '<div class="cover-image mx-auto">'+
+          '<span class="online badge-pulse-green"></span>'+
+          '<img src='+dishData.dishPhoto+' alt="..." class="rounded-circle mx-auto">'+
+          '</div>'+
+          '<div class="widget-body">'+
+          '<h4 class="name"><a href="#">'+dishData.dishName+'</a></h4>'+
+          '<div class="job">'+dishData.dishType+'</div>'+
+          '<div class="reviews owl-carousel">'+
+          '<div class="item">'+
+          '<div class="stats">'+
+          '<div class="row d-flex justify-content-between">'+
+          '<div class="col">'+
+          '<span class="counter">'+dishData.dishOfferPrice+'</span>'+
+          '<span class="text">Offer Price</span>'+
+          '</div>'+
+          '<div class="col">'+
+          '<span class="counter" style="text-decoration-line: line-through">'+dishData.dishPrice+'</span>'+
+          '<span class="text">Price</span>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '<div class="item">'+
+          '<div class="quick-about">'+
+          '<div class="row d-flex align-items-center">'+
+          '<div class="col-12">'+
+          '<h4>Description</h4>'+
+          '<p>'+dishData.dishDescription+
+          '</p>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '<div class="text-center">'+
+          '<div class="btn-group" role="group">'+
+          '<a href="editDish.html?id='+doc.id+'" class="btn btn-gradient-01">Edit Dish</a>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'
+          );
+        }else{
+          mainDiv.insertAdjacentHTML('beforebegin', 
+          '<div class="col-xl-3 col-md-4 col-sm-6 col-remove">' + 
+          '<div class="widget-image has-shadow">' +
+          '<div class="quick-actions hover dark">'+
+          '<div class="dropdown">'+
+          '<button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">'+
+          '<i class="la la-ellipsis-h"></i>'+
+          '</button>'+
+          '<div class="dropdown-menu">'+
+          '<a href="dishActive.html?id='+doc.id+'&active='+dishData.isActive+'" class="dropdown-item">'+
+          '<i class="la la-play-circle"></i>Start selling'+
+          '</a>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '<div class="contact-card">'+
+          '<div class="cover-image mx-auto">'+
+          '<span class=""></span>'+
+          '<img src='+dishData.dishPhoto+' alt="..." class="rounded-circle mx-auto">'+
+          '</div>'+
+          '<div class="widget-body">'+
+          '<h4 class="name"><a href="#">'+dishData.dishName+'</a></h4>'+
+          '<div class="job">'+dishData.dishType+'</div>'+
+          '<div class="reviews owl-carousel">'+
+          '<div class="item">'+
+          '<div class="stats">'+
+          '<div class="row d-flex justify-content-between">'+
+          '<div class="col">'+
+          '<span class="counter">'+dishData.dishOfferPrice+'</span>'+
+          '<span class="text">Offer Price</span>'+
+          '</div>'+
+          '<div class="col">'+
+          '<span class="counter" style="text-decoration-line: line-through">'+dishData.dishPrice+'</span>'+
+          '<span class="text">Price</span>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '<div class="item">'+
+          '<div class="quick-about">'+
+          '<div class="row d-flex align-items-center">'+
+          '<div class="col-12">'+
+          '<h4>Description</h4>'+
+          '<p>'+dishData.dishDescription+
+          '</p>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '<div class="text-center">'+
+          '<div class="btn-group" role="group">'+
+          '<a href="editDish.html?id='+doc.id+'" class="btn btn-gradient-01">Edit Dish</a>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'+
+          '</div>'
+          );
+        }
+      })
+    }else{
+      mainDiv.insertAdjacentHTML('beforebegin',
+        '<h2>No Dishes are added yet</h2>'
+      );
+      $('#load').removeClass("lds-hourglass");
+    }
+  }).then(()=>{
+    $('#load').removeClass("lds-hourglass");
+  })
+</script>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Brand Digital Portal | The Food Fest</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  /* For Firefox */
+  input[type='number'] {
+      -moz-appearance:textfield;
+  }
+  /* Webkit browsers like Safari and Chrome */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+</style>
+<script src="assets/webfont.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script type="27d95d96077262733048a84b-text/javascript">
+  WebFont.load({
+    google: {"families":["Montserrat:400,500,600,700","Noto+Sans:400,700"]},
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+  });
+</script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+
+<link rel="stylesheet" href="assets/vendors/css/base/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendors/css/base/elisyam-1.5.min.css">
+<link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl-carousel/owl.theme.min.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body id="page-top">
+
+<div id="preloader">
+<div class="canvas">
+<img src="assets/img/logo.png" alt="logo" class="loader-logo">
+<div class="spinner"></div>
+</div>
+</div>
+<div class="page">
+
+<div class="page-content d-flex align-items-stretch">
+
+<div class="container-fluid">
+<div class="row flex-row">
+<div class="col-xl-3">
+
+<div class="widget has-shadow">
+<div class="widget-body">
+
+<div class="mt-5">
+  <img src="assets/img/logo.png" alt="..." style="width: 120px;" class="avatar rounded-circle d-block mx-auto">
+</div>
+<h3 class="text-center mt-3 mb-1 merchantName"></h3>
+<p class="text-center merchantId"></p>
+<div class="em-separator separator-dashed"></div>
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="enterBrandDetails.html"><i class="la la-info-circle la-2x align-middle pr-2"></i>Brand Details</a>
+  </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href="enterBrandAddress.html"><i class="la la-industry la-2x align-middle pr-2"></i>Brand Address</a>
+  </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href=""><i class="la la-bank la-2x align-middle pr-2"></i>Bank Details</a>
+  </li><br>
+  <!-- <li class="nav-item">
+    <a class="nav-link" href="taxDetails.html"><i class="la la-money la-2x align-middle pr-2"></i>Tax Details</a>
+  </li><br>
+  <li class="nav-item">
+      <a class="nav-link" href="uploadLogo.html"><i class="la la-cloud-upload la-2x align-middle pr-2"></i>Upload Logo</a>
+    </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href="dashboard.html"><i class="la la-arrow-circle-left la-2x align-middle pr-2"></i>Back to Dashboard</a>
+  </li> -->
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div class="col-xl-9">
+<div class="widget has-shadow">
+
+<div class="widget-header bordered no-actions d-flex align-items-center">
+  <h4>Register your brand</h4>
+</div>
+<div class="widget-body">
+
+<div class="col-10 ml-auto">
+<div class="section-title mt-3 mb-3">
+  <h4>Bank Details (Optional)</h4>
+</div>
+</div>
+<br>
+<form class="form-horizontal" id="myBankForm">
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Bank Name</label>
+    <div class="col-lg-6">
+      <input type="text" id="bankName" value="" class="form-control" placeholder="Enter your bank name (Optional)">
+    </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Beneficiary Name</label>
+    <div class="col-lg-6">
+      <input type="text" id="beneficiaryName" value="" class="form-control" placeholder="Enter your beneficiary name (Optional)">
+    </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Account Number</label>
+    <div class="col-lg-6">
+      <input type="text" id="accountNumber" value="" class="form-control" placeholder="Enter your account number (Optional)">
+    </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+  <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">IFSC Code</label>
+  <div class="col-lg-6">
+    <input type="text" id="ifscCode" value="" class="form-control" placeholder="Enter your IFSC Code (Optional)">
+  </div>
+  </div>
+  <div class="form-group row d-flex align-items-center mb-5">
+      <label class="col-lg-2 form-control-label d-flex justify-content-lg-end">Branch Name</label>
+      <div class="col-lg-6">
+        <input type="text" id="branchName" value="" class="form-control" placeholder="Enter your branch name (Optional)">
+      </div>
+    </div>
+
+<div class="em-separator separator-dashed"></div>
+<div class="text-center">
+  <button class="btn btn-gradient-01" type="submit">Save & Next</button>
+  <button class="btn btn-shadow" type="reset">Cancel</button>
+</div>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+
+<footer class="main-footer">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+      <p class="text-gradient-02">Design & Developed By</p> &nbsp;&nbsp;<a style="font-size: 90%;color:crimson" href="https://github.com/sahilachhava" target="_blank">Sahil Achhava</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+</div>
+
+<script src="assets/vendors/js/base/jquery.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/base/core.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/nicescroll/nicescroll.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/owl-carousel/owl.carousel.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/app/app.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/js/app/contact/contact.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/rocket-loader.min.js" data-cf-settings="27d95d96077262733048a84b-|49" defer=""></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script src="firebase.js"></script>
+</body>
+<script type="text/javascript">
+  var session = sessionStorage.getItem("brandName");
+  if(session == null || session == "") {
+    window.location.href = "index.html";
+  }else{
+    document.getElementsByClassName("merchantName")[0].innerHTML = sessionStorage.getItem("brandName");
+    document.getElementsByClassName("merchantId")[0].innerHTML = "Merchant ID: AFF" + sessionStorage.getItem("brandEmail");
+  }
+</script>
+<script>
+    if(sessionStorage.getItem("bankName") != null){
+      document.getElementById("bankName").value = sessionStorage.getItem("bankName");
+      document.getElementById("beneficiaryName").value = sessionStorage.getItem("bankBeneficiaryName");
+      document.getElementById("accountNumber").value = sessionStorage.getItem("bankAccountNumber");
+      document.getElementById("ifscCode").value = sessionStorage.getItem("bankIFSCCode");
+      document.getElementById("branchName").value = sessionStorage.getItem("bankBranchName");
+    }
+  </script>
+<script>
+    const form = document.querySelector('#myBankForm');
+  
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+        
+      sessionStorage.setItem("bankName", document.getElementById("bankName").value);
+      sessionStorage.setItem("bankBeneficiaryName", document.getElementById("beneficiaryName").value);
+      sessionStorage.setItem("bankAccountNumber", document.getElementById("accountNumber").value);
+      sessionStorage.setItem("bankIFSCCode", document.getElementById("ifscCode").value);
+      sessionStorage.setItem("bankBranchName", document.getElementById("branchName").value);
+
+      window.location.href = "enterElectricityNeeds.html";
+    });
+  </script>
+</html>

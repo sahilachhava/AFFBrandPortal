@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Brand Digital Portal | The Food Fest</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  /* For Firefox */
+  input[type='number'] {
+      -moz-appearance:textfield;
+  }
+  /* Webkit browsers like Safari and Chrome */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  #progressUpload1, #progressUpload2 {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  .loader1, .loader2 {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid gray;
+    border-bottom: 16px solid gray;
+    width: 2px;
+    height: 2px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+<script src="assets/webfont.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script type="27d95d96077262733048a84b-text/javascript">
+  WebFont.load({
+    google: {"families":["Montserrat:400,500,600,700","Noto+Sans:400,700"]},
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+  });
+</script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+
+<link rel="stylesheet" href="assets/vendors/css/base/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendors/css/base/elisyam-1.5.min.css">
+<link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl-carousel/owl.theme.min.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body id="page-top">
+
+<div id="preloader">
+<div class="canvas">
+<img src="assets/img/logo.png" alt="logo" class="loader-logo">
+<div class="spinner"></div>
+</div>
+</div>
+<div class="page">
+
+<div class="page-content d-flex align-items-stretch">
+
+<div class="container-fluid">
+<div class="row flex-row">
+<div class="col-xl-3">
+
+<div class="widget has-shadow">
+<div class="widget-body">
+
+<div class="mt-5">
+  <img src="assets/img/logo.png" alt="..." style="width: 120px;" class="avatar rounded-circle d-block mx-auto">
+</div>
+<h3 class="text-center mt-3 mb-1 merchantName"></h3>
+<p class="text-center merchantId"></p>
+<div class="em-separator separator-dashed"></div>
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="enterBrandDetails.html"><i class="la la-info-circle la-2x align-middle pr-2"></i>Brand Details</a>
+  </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href="enterBrandAddress.html"><i class="la la-industry la-2x align-middle pr-2"></i>Brand Address</a>
+  </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href="enterBankDetails.html"><i class="la la-bank la-2x align-middle pr-2"></i>Bank Details</a>
+  </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href="enterElectricityNeeds.html"><i class="la la-plug la-2x align-middle pr-2"></i>Electricity Details</a>
+  </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href="enterTaxDetails.html"><i class="la la-money la-2x align-middle pr-2"></i>Tax Details</a>
+  </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href="reviewDeliverables.html"><i class="la la-file-text la-2x align-middle pr-2"></i>Our Deliverables</a>
+  </li><br>
+  <li class="nav-item">
+    <a class="nav-link" href=""><i class="la la-cloud-upload la-2x align-middle pr-2"></i>Upload Logo</a>
+  </li><br>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div class="col-xl-9">
+<div class="widget has-shadow">
+
+<div class="widget-header bordered no-actions d-flex align-items-center">
+  <h4>Register your brand</h4>
+</div>
+<div class="widget-body">
+
+<div class="col-10 ml-auto">
+<div class="section-title mt-3 mb-3">
+  <h4>Upload Logo</h4>
+</div>
+</div>
+<br>
+<form class="form-horizontal" id="myUploadForm" enctype="multipart/form-data">
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-3 form-control-label d-flex justify-content-lg-end">Upload Logo<span style="color: red">*</span></label>
+    <div class="col-lg-6">
+      <input type="file" id="logo" class="" accept="image/*,image/jpeg,image/jpg" placeholder="Upload your brand logo" required>
+    </div>
+    <div class="load1"></div>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <progress id="progressUpload1" value="0" max="100">0%</progress>
+
+  <br><br>
+
+
+  <div class="form-group row d-flex align-items-center mb-5">
+    <label class="col-lg-3 form-control-label d-flex justify-content-lg-end">Upload GST Certificate</label>
+    <div class="col-lg-6">
+      <input type="file" id="gstCertificate" class="" accept="application/msword,application/pdf" placeholder="Upload your brand gst certificate">
+    </div>
+    <div class="load2"></div>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <progress id="progressUpload2" value="0" max="100">0%</progress>
+
+<div class="em-separator separator-dashed"></div>
+<div class="text-center">
+  <button class="btn btn-gradient-01" type="submit">Register Brand</button>
+  <!-- <button class="btn btn-shadow" type="reset">Cancel</button> -->
+</div>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+
+<footer class="main-footer">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+      <p class="text-gradient-02">Design & Developed By</p> &nbsp;&nbsp;<a style="font-size: 90%;color:crimson" href="https://github.com/sahilachhava" target="_blank">Sahil Achhava</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+</div>
+
+<script src="assets/vendors/js/base/jquery.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/base/core.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/nicescroll/nicescroll.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/owl-carousel/owl.carousel.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/vendors/js/app/app.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/js/app/contact/contact.min.js" type="27d95d96077262733048a84b-text/javascript"></script>
+<script src="assets/rocket-loader.min.js" data-cf-settings="27d95d96077262733048a84b-|49" defer=""></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+<script src="firebase.js"></script>
+</body>
+<script type="text/javascript">
+  var session = sessionStorage.getItem("brandEmail");
+  if(session == null || session == "") {
+    window.location.href = "index.html";
+  }else{
+    document.getElementsByClassName("merchantName")[0].innerHTML = sessionStorage.getItem("brandName");
+    document.getElementsByClassName("merchantId")[0].innerHTML =  sessionStorage.getItem("brandEmail");
+  }
+</script>
+<script>
+    const form = document.querySelector('#myUploadForm');
+    var logo = document.getElementById("logo");
+    var gFile = document.getElementById("gstCertificate");
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      if(gFile.files[0] != null){
+        document.getElementsByClassName("load1")[0].className = "load1 loader1";
+        document.getElementsByClassName("load2")[0].className = "load2 loader2";
+        var session = sessionStorage.getItem("brandEmail");
+
+        var file = logo.files[0];
+        var gstFile = gFile.files[0];
+
+        var extension = file.name.split('.')[1];
+        var gstExtension = gstFile.name.split('.')[1];
+        
+        var upload1 = document.getElementById("progressUpload1");
+        var upload2 = document.getElementById("progressUpload2");
+
+        var logoRef = storageRef.ref('brands/'+session+"/brandLogo."+extension);
+        var gstRef = storageRef.ref('brands/'+session+"/gstCertificate."+gstExtension);
+        
+        gstRef.put(gstFile).then((snap) => {
+          var percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+          upload2.value = percentage;
+          snap.ref.getDownloadURL().then(function(downloadURL) {
+            document.getElementsByClassName("load2")[0].className = "load2";
+            sessionStorage.setItem("certificate", downloadURL);
+          })
+        }).then(() => {
+          logoRef.put(file).then((snapshot) => {
+            var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            upload1.value = percentage;
+            snapshot.ref.getDownloadURL().then(function(downloadURL) {
+              document.getElementsByClassName("load1")[0].className = "load1";
+              db.collection("brands").doc(session).set({
+                brandName: sessionStorage.getItem("brandName"),
+                userType: "brand",
+                brandTagline: sessionStorage.getItem("brandTagline"),
+                brandCuisine: sessionStorage.getItem("brandCuisine"),
+                brandPhoneNo: sessionStorage.getItem("brandPhoneNo"),
+                brandEmail: sessionStorage.getItem("brandEmail"),
+                brandWebsite: sessionStorage.getItem("brandWebsite"),
+                brandParticipationType: sessionStorage.getItem("participationType"),
+                brandLogo: downloadURL,
+                brandStallNo: sessionStorage.getItem("brandStallNo"),
+                brandElectricityNeed: sessionStorage.getItem("electricNeed"),
+
+                brandAddress: {
+                  brandStreet1: sessionStorage.getItem("brandStreet1"),
+                  brandStreet2: sessionStorage.getItem("brandStreet2"),
+                  brandArea: sessionStorage.getItem("brandArea"),
+                  brandLandmark: sessionStorage.getItem("brandLandmark"),
+                  brandCity: sessionStorage.getItem("brandCity"),
+                  brandState: sessionStorage.getItem("brandState"),
+                  brandPincode: sessionStorage.getItem("brandPincode"),
+                },
+
+                bankDetails: {
+                  bankName: sessionStorage.getItem("bankName"),
+                  bankBeneficiaryName: sessionStorage.getItem("bankBeneficiaryName"),
+                  bankAccountNumber: sessionStorage.getItem("bankAccountNumber"),
+                  bankIFSCCode: sessionStorage.getItem("bankIFSCCode"),
+                  bankBranchName: sessionStorage.getItem("bankBranchName"),
+                },
+
+                taxDetails: {
+                  taxPanNo: sessionStorage.getItem("taxPanNo"),
+                  taxGSTNo: sessionStorage.getItem("taxGSTNo"),
+                  gstCertificate: sessionStorage.getItem("certificate"),
+                },
+              }).then(()=>{
+                alert("Your brand registered successfully");
+                window.location.href = "dashboard.html";
+              })
+            });
+          });
+        })
+      }else{
+        document.getElementsByClassName("load1")[0].className = "load1 loader1";
+        var session = sessionStorage.getItem("brandEmail");
+        var file = logo.files[0];
+        var extension = file.name.split('.')[1];
+        var upload1 = document.getElementById("progressUpload1");
+        var logoRef = storageRef.ref('brands/'+session+"/brandLogo."+extension);
+        logoRef.put(file).then((snapshot) => {
+          var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          upload1.value = percentage;
+          snapshot.ref.getDownloadURL().then(function(downloadURL) {
+            document.getElementsByClassName("load1")[0].className = "load1";
+            db.collection("brands").doc(session).set({
+              brandName: sessionStorage.getItem("brandName"),
+              userType: "brand",
+              brandTagline: sessionStorage.getItem("brandTagline"),
+              brandCuisine: sessionStorage.getItem("brandCuisine"),
+              brandPhoneNo: sessionStorage.getItem("brandPhoneNo"),
+              brandEmail: sessionStorage.getItem("brandEmail"),
+              brandWebsite: sessionStorage.getItem("brandWebsite"),
+              brandParticipationType: sessionStorage.getItem("participationType"),
+              brandLogo: downloadURL,
+              brandElectricityNeed: sessionStorage.getItem("electricNeed"),
+              brandStallNo: sessionStorage.getItem("brandStallNo"),
+
+              brandAddress: {
+                brandStreet1: sessionStorage.getItem("brandStreet1"),
+                brandStreet2: sessionStorage.getItem("brandStreet2"),
+                brandArea: sessionStorage.getItem("brandArea"),
+                brandLandmark: sessionStorage.getItem("brandLandmark"),
+                brandCity: sessionStorage.getItem("brandCity"),
+                brandState: sessionStorage.getItem("brandState"),
+                brandPincode: sessionStorage.getItem("brandPincode"),
+              },
+
+              bankDetails: {
+                bankName: sessionStorage.getItem("bankName"),
+                bankBeneficiaryName: sessionStorage.getItem("bankBeneficiaryName"),
+                bankAccountNumber: sessionStorage.getItem("bankAccountNumber"),
+                bankIFSCCode: sessionStorage.getItem("bankIFSCCode"),
+                bankBranchName: sessionStorage.getItem("bankBranchName"),
+              },
+
+              taxDetails: {
+                taxPanNo: sessionStorage.getItem("taxPanNo"),
+                taxGSTNo: sessionStorage.getItem("taxGSTNo"),
+                gstCertificate: "",
+              },
+            }).then(()=>{
+              alert("Your brand registered successfully");
+              window.location.href = "dashboard.html";
+            })
+          });
+        })
+      }
+    });
+  </script>
+</html>

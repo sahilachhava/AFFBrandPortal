@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Brand Digital Portal | The Food Fest</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  /* For Firefox */
+  input[type='number'] {
+      -moz-appearance:textfield;
+  }
+  /* Webkit browsers like Safari and Chrome */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+</style>
+<script src="assets/webfont.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script type="34f65747dffe1dfea30e28ef-text/javascript">
+  WebFont.load({
+    google: {"families":["Montserrat:400,500,600,700","Noto+Sans:400,700"]},
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+  });
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+
+<link rel="stylesheet" href="assets/vendors/css/base/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendors/css/base/elisyam-1.5.min.css">
+<link rel="stylesheet" href="assets/css/animate/animate.min.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body id="page-top">
+
+<div id="preloader">
+<div class="canvas">
+<img src="assets/img/logo.png" alt="logo" class="loader-logo">
+<div class="spinner"></div>
+</div>
+</div>
+
+<div class="page">
+<div class="page-content d-flex align-items-stretch">
+
+<div class="content-inner compact">
+<div class="container-fluid">
+
+<div class="row">
+<div class="page-header">
+<div class="d-flex align-items-center">
+    <h2 class="page-header-title"><a href="dashboard.html">AFF Brand Dashboard</a></h2>
+<div>
+<div class="page-header-tools">
+  <a class="btn btn-gradient-01" href="brandProfile.html">Brand Profile</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row flex-row">
+
+<div class="col-xl-4 col-md-6 col-sm-6">
+<div class="widget widget-12 has-shadow">
+<div class="widget-body">
+<div class="media">
+<div class="align-self-center ml-5 mr-5">
+<i class="ion-pizza text-facebook"></i>
+</div>
+<div class="media-body align-self-center">
+<div class="title">AFF Menu</div>
+<div class="number" id="dishCount"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-4 col-md-6 col-sm-6">
+<div class="widget widget-12 has-shadow">
+<div class="widget-body">
+<div class="media">
+<div class="align-self-center ml-5 mr-5">
+<i class="ion-outlet text-twitter"></i>
+</div>
+<div class="media-body align-self-center">
+<div class="title">All Outlets</div>
+<div class="number" id="outletCount"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-4 col-md-6 col-sm-6">
+<div class="widget widget-12 has-shadow">
+<div class="widget-body">
+<div class="media">
+<div class="align-self-center ml-5 mr-5">
+<i class="ion-toggle-filled text-linkedin"></i>
+</div>
+<div class="media-body align-self-center">
+<div class="title">Vouchers</div>
+<div class="number">0 Vouchers</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<center>
+<div class="col-xl-9">
+  <div class="widget has-shadow">
+    <div class="widget-header bordered no-actions d-flex align-items-center">
+      <h4>Quick Shortcuts</h4>
+    </div>
+    <div class="widget-body">
+      <a href="addDish.html"><button type="button" class="btn btn-primary btn-lg mr-1 mb-2">Add New Dish</button></a>
+      <a href="addOutlet.html"><button type="button" class="btn btn-danger btn-lg mr-1 mb-2">Add New Outlet</button></a>
+      <a href="#" onclick="redeemVoucher()"><button type="button" class="btn btn-info btn-lg mr-1 mb-2">Redeem Voucher</button></a>
+      <!-- <button type="button" class="btn btn-danger btn-lg mr-1 mb-2">Issue Voucher</button> -->
+    </div>
+  </div>
+</div>
+</center>
+
+<center>
+  <div class="col-xl-9">
+    <div class="widget has-shadow">
+      <div class="widget-header bordered no-actions d-flex align-items-center">
+        <h4>Details</h4>
+      </div>
+      <div class="widget-body">
+        <a href="dishDetails.html"><button type="button" class="btn btn-primary btn-lg mr-1 mb-2">Dish Details</button></a>        
+        <a href="outletDetails.html"><button type="button" class="btn btn-danger btn-lg mr-1 mb-2">Outlet Details</button></a>
+        <button type="button" class="btn btn-warning btn-lg mr-1 mb-2"  onclick="voucherSetting()">Voucher Setting</button>
+        <a href="eTickets.html"><button type="button" class="btn btn-info btn-lg mr-1 mb-2">Complimentory E-Tickets</button></a>
+      </div>
+    </div>
+  </div>
+  <a href="#" onclick="logOut()"><button type="button" class="btn btn-success btn-lg mr-1 mb-2">Logout</button></a>
+</center>
+
+<br><br>
+
+<footer class="main-footer">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+      <p class="text-gradient-02">Design & Developed By</p> &nbsp;&nbsp;<a style="font-size: 90%;color:crimson" href="https://github.com/sahilachhava" target="_blank">Sahil Achhava</a>
+    </div>
+  </div>
+</footer>
+<div id="textMessageModal"></div>
+<div id="redeemVoucherModal"></div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/vendors/js/base/jquery.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/base/core.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/nicescroll/nicescroll.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/chart/chart.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/noty/noty.min.js" type="212c71962fd277976ce10eae-text/javascript"></script>
+<script src="assets/vendors/js/progress/circle-progress.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/vendors/js/app/app.min.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/js/dashboard/db-compact.js" type="34f65747dffe1dfea30e28ef-text/javascript"></script>
+<script src="assets/js/components/notifications/notifications.min.js" type="212c71962fd277976ce10eae-text/javascript"></script>
+<script src="assets/rocket-loader.min.js" data-cf-settings="34f65747dffe1dfea30e28ef-|49" defer=""></script>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+<script src="firebase.js"></script>
+
+<script type="text/javascript">
+  var session = sessionStorage.getItem("brandEmail");
+  if(session == null || session == "") {
+    window.location.href = "index.html";
+  }
+</script>
+<script>
+  var session = sessionStorage.getItem("brandEmail");
+  
+  db.collection("brands").doc(session).collection("dishDetails").get().then((snapshot) => { 
+    document.getElementById("dishCount").innerHTML =  snapshot.size + " Dishes Added";
+  });
+
+  db.collection("brands").doc(session).collection("allOutlets").get().then((snapshot) => {
+    if(snapshot.size == 0){
+      document.getElementById("outletCount").innerHTML =  snapshot.size + 1 + " Outlets";
+    }else{
+      document.getElementById("outletCount").innerHTML =  snapshot.size + " Outlets";
+    }
+  });
+
+  function voucherSetting(){
+    var session = sessionStorage.getItem("brandEmail");
+    db.collection('config').doc('vouchers').collection('brands').doc(session).get().then((doc)=>{
+      if(doc.exists){
+        var data = doc.data(); 
+        if(data != null){
+          onVoucherSetting(data.brandName, data.brandEmail, data.minimumRedeeming, data.brandTerms);
+        }else{
+          alert("You have not opted for voucher agreement yet\n For more details contact Sahil: +919429933807");
+        }
+      }else{
+        alert("You have not opted for voucher agreement yet\n For more details contact Sahil: +919429933807");
+      }
+    })
+  }
+
+  function redeemVoucher(){
+  	 var session = sessionStorage.getItem("brandEmail");
+    db.collection('config').doc('vouchers').collection('brands').doc(session).get().then((doc)=>{
+      if(doc.exists){
+        var data = doc.data(); 
+        if(data != null){
+          redeemVoucherToggle(data.brandName, data.brandEmail);
+        }else{
+          alert("You have not opted for voucher agreement yet\n For more details contact Sahil: +919429933807");
+        }
+      }else{
+        alert("You have not opted for voucher agreement yet\n For more details contact Sahil: +919429933807");
+      }
+    })
+  }
+  
+  function logOut(){
+    firebase.auth().signOut().then(function() {
+      sessionStorage.removeItem('brandName');
+      sessionStorage.removeItem('brandEmail');
+      window.location.href = "index.html";
+    })
+  }
+
+  async function onVoucherSetting(name, email, minimum, terms){
+    $('#textMessageModal').empty();
+    $('#textMessageModal').append(
+      '<div id="modal-textMessage" class="modal fade">'+
+        '<div class="modal-dialog modal-dialog-centered">'+
+        '<div class="modal-content">'+
+          '<div class="modal-header">'+
+            '<h4 class="modal-title">Voucher Setting</h4>'+
+            '<button type="button" class="close" data-dismiss="modal">'+
+              '<span aria-hidden="true">×</span>'+
+              '<span class="sr-only">close</span>'+
+            '</button>'+
+          '</div>'+
+          '<div class="modal-body">'+
+            '<center>'+
+              '<h3>Brand: '+name+'</h3><br>'+
+              '<h5>Add your voucher redemption Terms & Conditions</h5>'+
+             '</center><br>'+
+            '<form id="modelForm">'+
+            '<input type="hidden" id="brandEmail" value="'+email+'" />'+
+            '<div class="form-group row d-flex align-items-center mb-5">'+
+              '<label class="col-lg-3 form-control-label d-flex justify-content-lg-end">Minimum<span style="color: red">*</span></label>'+
+              '<div class="col-lg-9">'+
+                '<input type="number" id="minimumRedeem" value="'+minimum+'" class="form-control" placeholder="Enter minimum billing amount for redeem" required>'+
+              '</div>'+
+            '</div>'+
+            '<div class="form-group row d-flex align-items-center mb-5">'+
+                '<label class="col-lg-3 form-control-label d-flex justify-content-lg-end">Terms<span style="color: red">*</span></label>'+
+                '<div class="col-lg-9">'+
+                  '<textarea type="text" cols="5" rows="5" id="terms" value="'+terms+'" class="form-control" placeholder="Enter vouchers terms & conditions" required>'+terms+'</textarea>'+
+                '</div>'+
+              '</div>'+
+          '</div>'+
+          '<div class="modal-footer">'+
+            '<input type="button" class="btn btn-shadow" id="closeModal" data-dismiss="modal" value="Close" />'+
+            '<input type="submit" onclick="saveVoucherSetting();" class="btn btn-danger" data-toggle="modal" data-target="#success-modal" value="Update" />'+
+          '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>'+
+      '</div>'
+    );
+    $('#modal-textMessage').modal('show');
+  }
+
+   async function redeemVoucherToggle(name, email, minimum, terms){
+    $('#redeemVoucherModal').empty();
+    $('#redeemVoucherModal').append(
+      '<div id="modal-redeemVoucher" class="modal fade">'+
+        '<div class="modal-dialog modal-dialog-centered">'+
+        '<div class="modal-content">'+
+          '<div class="modal-header">'+
+            '<h4 class="modal-title">Redeem Voucher</h4>'+
+            '<button type="button" class="close" data-dismiss="modal">'+
+              '<span aria-hidden="true">×</span>'+
+              '<span class="sr-only">close</span>'+
+            '</button>'+
+          '</div>'+
+          '<div class="modal-body">'+
+            '<center>'+
+              '<h3>Brand: '+name+'</h3><br>'+
+              '<h5>If it don\'t search at first time, try again it will work (will solve this bug soon)</h5>'+
+             '</center><br>'+
+            '<form id="modelForm">'+
+            '<input type="hidden" id="brandEmail" value="'+email+'" />'+
+            '<div class="form-group row d-flex align-items-center mb-5">'+
+              '<label class="col-lg-3 form-control-label d-flex justify-content-lg-end">Phone Number<span style="color: red">*</span></label>'+
+              '<div class="col-lg-9">'+
+                '<input type="number" id="userNumber" minlength="10" value="(+91) 7777777777" class="form-control" placeholder="Enter customer phone number" required>'+
+              '</div>'+
+            '</div>'+
+          '<div class="modal-footer">'+
+            '<input type="button" class="btn btn-shadow" id="closeModal" data-dismiss="modal" value="Close" />'+
+            '<input type="submit" onclick="searchVoucher();" class="btn btn-danger" value="Search Vouchers" />'+
+          '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>'+
+      '</div>'
+    );
+    $('#modal-redeemVoucher').modal('show');
+  }
+
+   function searchVoucher(){
+    var session = document.getElementById('brandEmail').value;
+    var phoneNumber = document.getElementById('userNumber').value;
+    if(phoneNumber==""){
+      alert("Please enter valid phone number");
+    }else{
+      db.collection("users").where("userPhoneNo","==",phoneNumber).get().then(async (docs)=>{
+        docs.forEach(async (doc)=>{
+        	if(doc.exists){
+        		const userData = doc.data();
+        		await sessionStorage.setItem("userEmail", userData.userEmail);
+        		window.location.href = "voucherDetails.html";
+        		$('#closeModal').click();
+        	}else{
+        		alert("Customer Not Found");
+        	}
+        })
+      });
+    }
+  }
+
+  function saveVoucherSetting(){
+    var session = document.getElementById('brandEmail').value;
+    var minimum = document.getElementById('minimumRedeem').value;
+    var terms = document.getElementById('terms').value;
+    if(minimum==""){
+      alert("Please enter minimum redemption amount");
+    }else if(terms==""){
+      alert("Please enter terms & condition for voucher");
+    }else{
+      $('#closeModal').click();
+      db.collection("config").doc("vouchers").collection('brands').doc(session).update({
+        minimumRedeeming: parseInt(minimum),
+        brandTerms: terms,
+      });
+    }
+  }
+</script>
+</html>

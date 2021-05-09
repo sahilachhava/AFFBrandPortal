@@ -1,0 +1,20 @@
+<html>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script>
+    var session = sessionStorage.getItem("brandEmail");
+    var dishId = window.location.search.split('=')[1].split('&')[0];
+    var activeId = window.location.search.split('=')[2];
+
+    db.collection("brands").doc(session).collection("dishDetails").doc(dishId).update({
+        isActive: activeId == 'true' ? false : true,
+    }).then(()=>{
+        window.location.href = "dishDetails.html";
+    });
+
+</script>
+</html>
+
