@@ -11,9 +11,9 @@ _Login_<br />
 
 ![Homepage](https://github.com/sahilachhava/AFFBrandPortal/blob/main/screenshots/login.png)<br />
 
-_brand detail_<br />
+_Brand detail_<br />
 
-![Homepage](https://github.com/sahilachhava/AFFBrandPortal/blob/main/screenshots/detial.png)<br />
+![Homepage](https://github.com/sahilachhava/AFFBrandPortal/blob/main/screenshots/detail.png)<br />
 
 _Registering brand_<br />
 
