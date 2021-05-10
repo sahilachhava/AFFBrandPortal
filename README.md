@@ -34,3 +34,5 @@ _All dishes_<br />
 _Add outlets_<br />
 
 ![Homepage](https://github.com/sahilachhava/AFFBrandPortal/blob/main/screenshots/outlet.png)<br />
+
+_**Note** For security reasons the google services for firebase is removed from project files_
